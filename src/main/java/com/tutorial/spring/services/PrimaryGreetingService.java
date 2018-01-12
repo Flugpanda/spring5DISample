@@ -11,9 +11,10 @@ import org.springframework.stereotype.Service;
  * @author Bastian Bräunel
  *
  * @Primary		if there is more then one bean, use this one
+ * @Profile({"en", "default"})	thell spring to use this bean whether the profile is set to en or to the default profile
  */
 @Service
-@Profile("en")
+@Profile({"en", "default"})
 @Primary
 public class PrimaryGreetingService implements IGreetingService {
 
