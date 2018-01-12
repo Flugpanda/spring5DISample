@@ -20,7 +20,7 @@ public class Spring5DiSampleApplication {
 		MyController controller = (MyController) context.getBean(MyController.class);
 		
 //		PrimaryGreeting
-		System.out.println(controller.sayHallo());
+		System.out.println(controller.sayHello());
 
 //		 PropertyInjectedController
 		System.out.println(context.getBean(PropertyInjectedController.class).sayHello() + " - PropertyInjectedController");
