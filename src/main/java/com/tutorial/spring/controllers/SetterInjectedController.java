@@ -1,5 +1,8 @@
 package com.tutorial.spring.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import com.tutorial.spring.services.IGreetingService;
 
 /**
@@ -8,6 +11,7 @@ import com.tutorial.spring.services.IGreetingService;
  * @author Bastian Bräunel
  *
  */
+@Controller
 public class SetterInjectedController {
 	
 	// private property of the interface type
@@ -20,6 +24,7 @@ public class SetterInjectedController {
 	/**
 	 * This method handles the dependency injection
 	 */
+	@Autowired
 	public void setGreetingService(IGreetingService greetingService) {
 		this.greetingService = greetingService;
 	}

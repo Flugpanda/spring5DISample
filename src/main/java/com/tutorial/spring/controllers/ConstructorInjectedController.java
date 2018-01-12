@@ -1,5 +1,7 @@
 package com.tutorial.spring.controllers;
 
+import org.springframework.stereotype.Controller;
+
 import com.tutorial.spring.services.IGreetingService;
 
 /**
@@ -8,12 +10,14 @@ import com.tutorial.spring.services.IGreetingService;
  * @author Bastian Bräunel
  *
  */
+@Controller
 public class ConstructorInjectedController {
 
 	private IGreetingService greetringService;
 
 	/**
 	 * The constructor is responsible for the dependency injection at creation
+	 * 
 	 * The object can't be created without injecting the dependency.
 	 * This makes this implementation secure and reliable.
 	 * 

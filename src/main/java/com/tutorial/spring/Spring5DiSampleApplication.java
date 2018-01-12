@@ -4,7 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.tutorial.spring.controllers.ConstructorInjectedController;
 import com.tutorial.spring.controllers.MyController;
+import com.tutorial.spring.controllers.PropertyInjectedController;
+import com.tutorial.spring.controllers.SetterInjectedController;
 
 @SpringBootApplication
 public class Spring5DiSampleApplication {
@@ -17,5 +20,15 @@ public class Spring5DiSampleApplication {
 		MyController controller = (MyController) context.getBean(MyController.class);
 
 		controller.sayHallo();
+
+//		 PropertyInjectedController
+		System.out.println(context.getBean(PropertyInjectedController.class).sayHello() + " - PropertyInjectedController");
+		
+//		 SetterInjectedController
+		System.out.println(context.getBean(SetterInjectedController.class).sayHello() + " - SetterInjectedController");
+		
+//		 ConstructorInjectedController
+		System.out.println(context.getBean(ConstructorInjectedController.class).sayHello() + " - ConstructorInjectedController");
+		
 	}
 }

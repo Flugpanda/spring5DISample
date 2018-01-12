@@ -1,5 +1,8 @@
 package com.tutorial.spring.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import com.tutorial.spring.services.GreetringServiceImpl;
 
 /**
@@ -11,13 +14,15 @@ import com.tutorial.spring.services.GreetringServiceImpl;
  * @author Bastian Bräunel
  *
  */
+@Controller
 public class PropertyInjectedController {
 
 	// public property using the concrete class instead of the interface
 	// the property has to be public, otherwise di won't work
+	@Autowired
 	public GreetringServiceImpl greetingSerice;
 	
-	public String sayHallo() {
+	public String sayHello() {
 		return greetingSerice.sayGreeting();
 	}
 }
