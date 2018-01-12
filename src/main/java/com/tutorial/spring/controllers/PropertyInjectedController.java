@@ -1,6 +1,7 @@
 package com.tutorial.spring.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.tutorial.spring.services.IGreetingService;
@@ -21,12 +22,10 @@ public class PropertyInjectedController {
 	 * public property using the concrete class instead of the interface
 	 * the property has to be public, otherwise di won't work
 	 * 
-	 * @Qualifier
-	 * This annotation is not used in this example. So the is a little trick needed.
-	 * The variable (property name) is exactly named after the bean (GreetringServiceImpl) that shall be injected
-	 * Spring will notice that via reflection an will inject the correct bean
+	 * @Qualifier	specify the service, otherwise the  @Primary bean will be injected
 	 */
 	@Autowired
+	@Qualifier("greetringServiceImpl")
 	public IGreetingService greetringServiceImpl;
 	
 	public String sayHello() {

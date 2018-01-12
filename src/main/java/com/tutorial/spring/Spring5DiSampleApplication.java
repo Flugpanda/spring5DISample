@@ -18,8 +18,9 @@ public class Spring5DiSampleApplication {
 		
 		// getting an instance of a MyController-Bean from the spring context
 		MyController controller = (MyController) context.getBean(MyController.class);
-
-		controller.sayHallo();
+		
+//		PrimaryGreeting
+		System.out.println(controller.sayHallo());
 
 //		 PropertyInjectedController
 		System.out.println(context.getBean(PropertyInjectedController.class).sayHello() + " - PropertyInjectedController");

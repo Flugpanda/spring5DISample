@@ -2,6 +2,8 @@ package com.tutorial.spring.controllers;
 
 import org.springframework.stereotype.Controller;
 
+import com.tutorial.spring.services.IGreetingService;
+
 /**
  * Just a simple controller that will be grabbed from the context in the main application.
  * 
@@ -11,7 +13,15 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MyController {
 	
-	public void sayHallo() {
+	private IGreetingService greetingService;
+	
+	public MyController(IGreetingService greetingService) {
+		this.greetingService = greetingService;
+	}
+
+	public String sayHallo() {
 		System.out.println("Hallo World");
+		
+		return greetingService.sayGreeting();
 	}
 }
