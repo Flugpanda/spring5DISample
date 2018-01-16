@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
  *
  */
 @Service
-public class ContructorGreetringService implements IGreetingService {
+public class ConstructorGreetringService implements IGreetingService {
 
 	@Override
 	public String sayGreeting() {
