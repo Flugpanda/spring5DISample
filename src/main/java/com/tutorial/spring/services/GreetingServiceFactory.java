@@ -1,6 +1,7 @@
 package com.tutorial.spring.services;
 
 import com.tutorial.spring.repositories.IGreetingRepository;
+import com.tutorial.spring.utils.SupportedLanguages;
 
 /**
  * This class shown a basic implementation how to use factory bean
@@ -26,12 +27,12 @@ public class GreetingServiceFactory {
 	 * @param lang
 	 * @return
 	 */
-    public IGreetingService createGreetingSevice(String lang) {
+    public IGreetingService createGreetingSevice(SupportedLanguages lang) {
 
         switch (lang){
-            case "en":
+            case EN:
                 return new PrimaryGreetingService(greetingRepository);
-            case "de":
+            case DE:
                 return new PrimaryGermanGreetingService(greetingRepository);
             default:
                 return new PrimaryGreetingService(greetingRepository);
