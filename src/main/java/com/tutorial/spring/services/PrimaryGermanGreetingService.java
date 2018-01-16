@@ -1,8 +1,6 @@
 package com.tutorial.spring.services;
 
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Service;
+import com.tutorial.spring.repositories.IGreetingRepository;
 
 /**
  * This class is another implementation of the IGreetingService
@@ -11,14 +9,17 @@ import org.springframework.stereotype.Service;
  * @author Bastian Bräunel
  *
  */
-@Service
-@Profile("de")
-@Primary
 public class PrimaryGermanGreetingService implements IGreetingService {
+
+	private IGreetingRepository greetingRepository;
+	
+	public PrimaryGermanGreetingService(IGreetingRepository greetingRepository) {
+		this.greetingRepository = greetingRepository;
+	}
 
 	@Override
 	public String sayGreeting() {
-		return "Hallo von dem injecteden PrimaryGreetingService!";
+		return greetingRepository.getGermanGreeting();
 	}
 
 }
